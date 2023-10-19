@@ -20,28 +20,14 @@ function Login(props) {
         <AuthForm
             name="login"
             title="Рады видеть!"
-            // здесь я еще делаю
-            button="Зарегиcтрироваться"
+            button="Войти"
             onSubmit={handleSubmit}
-            questionLink="Уже зарегистрированы?"
-            link="/signin"
-            textLink="Войти"
+            questionLink="Ещё не зарегистрированы?"
+            link="/signup"
+            textLink="Регистрация"
             handleSubmit={handleSubmit}
         >
             <>
-                <input
-                    id="name-profile"
-                    className="authform__input"
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Имя"
-                    value={name || ""}
-                    minLength="2"
-                    maxLength="40"
-                    onChange={handleNameChange}
-                />
-                <span className="name-profile-error authform__text-error"></span>
                 <input
                     id="email"
                     className="authform_input"
