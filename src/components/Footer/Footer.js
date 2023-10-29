@@ -14,7 +14,7 @@ function Footer() {
                     <a className="footer__container_link" href="https://practicum.yandex.ru/">
                         Яндекс.Практикум
                     </a>
-                    <a className="footer__container_link" href="https://github.com/natalyaKya">
+                    <a className="footer__container_link" href="https://github.com/">
                         Github
                     </a>
                 </nav>
