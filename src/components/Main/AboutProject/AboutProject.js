@@ -19,7 +19,6 @@ function AboutProject() {
                 <p className="paragraph about-project__paragraph">
                     У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.
                 </p>
-
             </div>
             <div className="about-project__scheme">
                 <div className="about-project__scheme-el about-project__scheme_week">
