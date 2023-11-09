@@ -1,4 +1,3 @@
-
 const cards = [{
     id: 1,
     nameRU: '33 слова о дизайне',
