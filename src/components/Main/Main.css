@@ -1,0 +1,29 @@
+.section-name {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    text-align: start;
+    margin: 0;
+}
+
+.section-name:after {
+    content: "";
+    display: block;
+    margin-top: 23px;
+    width: 100%;
+    height: 1px;
+    background-color: #DADADA;
+}
+
+@media (max-width: 320px) {
+
+    .section-name {
+        font-size: 18px;
+        letter-spacing: -0.72px;
+    }
+
+    .section-name:after {
+        margin-top: 28px;
+    }
+}

@@ -4,14 +4,13 @@ import cards from "../../../utils/cards";
 
 function MoviesCardList(props) {
     return (
+
         <section className="elements">
             {cards.map((card) => (
                 <MoviesCard
-                    key={card._id}
-                    onCardClick={props.onCardClick}
-                    onCardLike={props.onCardLike}
-                    onCardDelete={props.onCardDelete}
+                    key={card.id}
                     card={card}
+                    name={props.name}
                 />
             ))}
         </section>

@@ -1,5 +1,6 @@
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
@@ -7,36 +8,65 @@ import Movies from './components/Movies/Movies';
 import SavedMovies from './components/SavedMovies/SavedMovies';
 import Profile from './components/Profile/Profile';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
+  const [isBurgerOpen, setIsBurgerOpen] = useState("false")
+  const location = useLocation();
+
+  React.useEffect(() => {
+    setIsBurgerOpen(false);
+  }, [location]);
+
+  const handleBurgerClick = () => {
+    setIsBurgerOpen(!isBurgerOpen)
+  }
   return (
     <div className="App">
+      <Navbar
+        handleBurgerClick={handleBurgerClick}
+        isBurgerOpen={isBurgerOpen} />
       <Routes>
         <Route
           path="/"
           element={
-            <Main />
+            <Main
+              isAuthorized={true}
+              handleBurgerClick={handleBurgerClick}
+              isBurgerOpen={isBurgerOpen}
+            />
           }
         />
         <Route
-          path="/sign-up"
+          path="/signup"
           element={<Register />}
         />
         <Route
-          path="/sign-in"
+          path="/signin"
           element={<Login />}
         />
         <Route
           path="/movies"
-          element={<Movies />}
+          element={<Movies
+            isAuthorized={true}
+            handleBurgerClick={handleBurgerClick}
+            isBurgerOpen={isBurgerOpen}
+          />}
         />
         <Route
           path="/saved-movies"
-          element={<SavedMovies />}
+          element={<SavedMovies
+            isAuthorized={true}
+            handleBurgerClick={handleBurgerClick}
+            isBurgerOpen={isBurgerOpen}
+          />}
         />
         <Route
           path="/profile"
-          element={<Profile />}
+          element={<Profile
+            handleBurgerClick={handleBurgerClick}
+            isBurgerOpen={isBurgerOpen}
+          />}
         />
         <Route
           path="*"

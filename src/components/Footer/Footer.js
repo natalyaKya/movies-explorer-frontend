@@ -7,14 +7,14 @@ function Footer() {
                 Учебный проект Яндекс.Практикум х BeatFilm.
             </span>
             <div className="footer__container">
-                <span className="footer__container_date">
+                <span className="footer__container-date">
                     &#169; 2020
                 </span>
-                <nav className="footer__container_navigation">
-                    <a className="footer__container_link" href="https://practicum.yandex.ru/">
+                <nav className="footer__container-navigation">
+                    <a className="footer__container-link" rel="noreferrer" target="_blank" href="https://practicum.yandex.ru/">
                         Яндекс.Практикум
                     </a>
-                    <a className="footer__container_link" href="https://github.com/">
+                    <a className="footer__container-link" rel="noreferrer" target="_blank" href="https://github.com/">
                         Github
                     </a>
                 </nav>

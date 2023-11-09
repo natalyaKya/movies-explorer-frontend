@@ -1,27 +1,29 @@
 import React from "react";
-import logo from "../images/logo.svg";
+import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
-import { AppContext } from "../contexts/AppContext";
 
 function AuthForm({ name, title, button, children, questionLink, link, textLink, handleSubmit }) {
-    const Context = React.useContext(AppContext);
 
     return (
         <main className="auth">
-            <img className="authform__logo" src={logo} alt="Логотип проекта Мovie-explorer" />
+            <Link className="authform__logo-box" to="/">
+                <img className="authform__logo" src={logo} alt="Логотип проекта Мovie-explorer" />
+            </Link>
             <h2 className="authform__heading">{title}</h2>
             <form className="authform" name={name} onSubmit={handleSubmit}>
-                {children}
+                <div className="authform__container">
+                    {children}
+                </div>
                 <button
                     className={`authform__button authform__button-load`}
                     type="submit"
                 >
-                    {Context.isLoading ? "Сохранение..." : `${button}`}
+                    {button}
                 </button>
             </form>
-            <span className="authform__link">
+            <span className="authform__question-link">
                 {questionLink}
-                <Link to={link} className="link">{textLink}</Link>
+                <Link to={link} className="authform__link link">{textLink}</Link>
             </span>
         </main >
     );

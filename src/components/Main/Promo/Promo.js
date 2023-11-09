@@ -2,7 +2,7 @@ import React from "react";
 
 function Promo() {
     return (
-        <section className="promo">
+        <section className="section promo">
             <div className="promo__container">
                 <div className="promo__text">
                     <h1 className="main-title">

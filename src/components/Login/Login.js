@@ -28,25 +28,27 @@ function Login(props) {
             handleSubmit={handleSubmit}
         >
             <>
+                <label className="authform__label" htmlFor="email-login">E-mail</label>
                 <input
-                    id="email"
-                    className="authform_input"
+                    id="email-login"
+                    className="authform__input"
                     type="email"
                     name="email"
                     required
-                    placeholder="Email"
                     value={email || ""}
+                    placeholder={email}
                     onChange={handleEmailChange}
                 />
                 <span className="email-profile-error authform__text-error"></span>
+                <label className="authform__label" htmlFor="password-login">Пароль</label>
                 <input
-                    id="password"
-                    className="authform_input"
+                    id="password-login"
+                    className="authform__input"
                     type="password"
                     name="password"
                     required
-                    placeholder="Пароль"
                     value={password || ""}
+                    placeholder={password}
                     onChange={handlePasswordChange}
                 />
                 <span className="password-profile-error authform__text-error"></span>

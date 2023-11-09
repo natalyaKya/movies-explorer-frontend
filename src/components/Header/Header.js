@@ -1,29 +1,31 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import logo from "../images/logo.svg";
-import profile from "../images/profile.svg";
+import { Link } from "react-router-dom";
+import logo from "../../images/logo.svg";
 import Navigation from "../Navigation/Navigation";
+import HeaderAuth from "../HeaderAuth/HeaderAuth";
+import HeaderAccount from "../HeaderAccount/HeaderAccount";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 function Header(props) {
 
+    const { width } = useWindowSize();
+
     return (
-        <header className="header">
+        <header className={`header ${props.isMain && `header_main`}`}>
             <Link to="/">
                 <img className="header__logo" src={logo} alt="Логотип проекта Мovie-explorer" />
             </Link>
             {props.isAuthorized ?
-                <>
-                    <Navigation />
-                    <div className="header__auth">
-                        <NavLink to="/profile" className={({ isActive }) => `${isActive ? "nav__link_active" : "nav__link"}`}>Аккаунт</NavLink>
-                        <img className="header__profile" src={profile} alt="Иконка профиля" />
-                    </div>
-                </>
+                width > 768 ?
+                    <>
+                        < Navigation />
+                        <HeaderAccount
+                            isMain={props.isMain}
+                        />
+                    </>
+                    : <div className="header__burger" onClick={props.handleBurgerClick}></div>
                 :
-                <div className="header__auth">
-                    <Link to="/signup" className="nav__link">Регистрация</Link>
-                    <Link to="/signin" className="nav__link nav__link_signin">Войти</Link>
-                </div>
+                <HeaderAuth />
             }
         </header >
     );

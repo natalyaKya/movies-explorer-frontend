@@ -1,0 +1,60 @@
+.header__account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    height: 32px;
+    gap: 7px;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 3px 3px 7px 11px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px 0px rgba(50, 50, 71, 0.06);
+}
+
+.header__profile-link {
+    font-size: 13px;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+}
+
+.header__account:hover {
+    opacity: 80%;
+}
+
+.header__profile {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313131;
+    width: 26px;
+    height: 26px;
+    border-radius: 50px;
+    padding: 7px;
+}
+
+.header__profile_main {
+    background-color: #0F4157;
+}
+
+.header__profile-icon {
+    background: url(../../images/profile.svg) center;
+    width: 10.38px;
+    height: 10.67px;
+}
+
+@media (max-width: 768px) {
+    .header__account {
+        position: fixed;
+        bottom: 99.5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .header__account {
+        bottom: 46px;
+    }
+}

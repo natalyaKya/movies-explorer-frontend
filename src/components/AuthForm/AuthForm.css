@@ -1,0 +1,139 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin: 0 auto;
+    align-items: flex-start;
+    max-width: 396px;
+    min-height: 100vh;
+}
+
+.authform__logo:hover {
+    opacity: 80%;
+}
+
+.authform__logo {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.authform__heading {
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.authform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 377px;
+}
+
+.authform__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.authform__label {
+    font-family: inherit;
+    color: #8B8B8B;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: start;
+}
+
+.authform__input {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    max-width: 396px;
+    border: 0;
+    background-color: #2F2F2F;
+    border-radius: 8px;
+    color: #FFF;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    outline-style: none;
+}
+
+.authform__input:focus {
+    outline: 3px outset #3456F3;
+}
+
+.authform__button {
+    background-color: #3456F3;
+    border-radius: 3px;
+    color: white;
+    font-family: "Inter", "Arial", "Helvetica", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 260px;
+    max-Width: 396px;
+    Height: 45px;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.authform__button:hover {
+    opacity: 80%;
+}
+
+.authform__question-link {
+    margin-top: 16px;
+    align-self: center;
+    color: #8B8B8B;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.authform__question-link .authform__link {
+    color: #4285F4;
+    padding: 0 6px;
+}
+
+@media (max-width: 768px) {
+    .auth {
+        padding-top: 232px;
+        padding-bottom: 232px;
+    }
+}
+
+@media (max-width: 536px) {
+    .auth {
+        align-items: center;
+        padding: 56px 30px 30px;
+    }
+
+    .authform__question-link {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    .authform {
+        height: 465px;
+    }
+
+    .authform__heading {
+        padding-top: 47px;
+        padding-bottom: 82px;
+    }
+
+    .authform__button {
+        /* margin-bottom: 14px; */
+        font-size: 12px;
+    }
+}

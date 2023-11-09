@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
-import MoviesCardList from "../Movies/MoviesCardList";
+import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 import SearchForm from "./SearchForm/SearchForm";
 import Footer from "../Footer/Footer";
 
@@ -10,10 +10,15 @@ function Movies(props) {
         <>
             <Header
                 isAuthorized={props.isAuthorized}
+                isMain={false}
+                handleBurgerClick={props.handleBurgerClick}
+                isBurgerOpen={props.isBurgerOpen}
             />
             <main className="movies">
                 <SearchForm />
-                <MoviesCardList />
+                <MoviesCardList
+                    name="movies"
+                />
                 <button
                     className="movies__button"
                     type="submit"

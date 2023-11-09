@@ -32,37 +32,40 @@ function Register(props) {
             handleSubmit={handleSubmit}
         >
             <>
+                <label className="authform__label" htmlFor="name-register">Имя
+                </label>
                 <input
-                    id="name-profile"
+                    id="name-register"
                     className="authform__input"
                     type="text"
                     name="name"
                     required
-                    placeholder="Имя"
                     value={name || ""}
                     minLength="2"
                     maxLength="40"
                     onChange={handleNameChange}
                 />
                 <span className="name-profile-error authform__text-error"></span>
+                <label className="authform__label" htmlFor="email-register">Email
+                </label>
                 <input
-                    id="email"
-                    className="authform_input"
+                    id="email-register"
+                    className="authform__input"
                     type="email"
                     name="email"
                     required
-                    placeholder="Email"
                     value={email || ""}
                     onChange={handleEmailChange}
                 />
                 <span className="email-profile-error authform__text-error"></span>
+                <label className="authform__label" htmlFor="password-register">Пароль
+                </label>
                 <input
-                    id="password"
-                    className="authform_input"
+                    id="password-register"
+                    className="authform__input"
                     type="password"
                     name="password"
                     required
-                    placeholder="Пароль"
                     value={password || ""}
                     onChange={handlePasswordChange}
                 />

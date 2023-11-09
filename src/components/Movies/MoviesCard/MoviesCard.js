@@ -1,32 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Card(props) {
-    const [isSaved, setIsSaved] = React.useState("");
+function MoviesCard(props) {
+    const [isClicked, setIsClicked] = useState(false);
 
-    const handleIconClick = () => {
-        setIsSaved(true);
+    const handleCardButtonClick = () => {
+        setIsClicked(!isClicked)
     };
-
-    const cardSaveButtonClassName = `card__save-button ${isSaved && "card__save-button_active"
-        }`;
-
+    const cardButtonClassName = `card__button-${props.name} ${isClicked && `card__button-${props.name}_active`}`
     return (
         <div className="elements__card">
-            <div
+            <img
                 className="elements__image"
-                style={{ backgroundImage: `${process.env.PUBLIC_URL + props.card.image}` }}
-            ></div>
+                src={props.card.image}
+                alt={props.card.nameRU}
+            />
             <div className="elements__container">
-                <h2 className="elements__title">{props.card.nameRU}</h2>
+                <div className="elements__text">
+                    <h2 className="elements__title">{props.card.nameRU}</h2>
+                    <span className="elements__time">{props.card.duration}</span>
+                </div>
                 <button
-                    className={cardSaveButtonClassName}
-                    onClick={() => handleIconClick()}
-                    type="button"
-                ></button>
-                <span className={"elements__time"}>{props.card.duration}</span>
+                    className={cardButtonClassName}
+                    type="submit"
+                    onClick={handleCardButtonClick}
+                />
             </div>
         </div>
     );
 }
 
-export default Card;
+export default MoviesCard;
