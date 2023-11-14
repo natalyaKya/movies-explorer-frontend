@@ -32,6 +32,19 @@
   color: white;
 }
 
+.form__error {
+  color: #EE3465;
+  font-size: 10px;
+  font-weight: 400;
+  padding-top: 10px;
+  opacity: 0;
+  height: 10px;
+}
+
+.form__error_active {
+  opacity: 1;
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }

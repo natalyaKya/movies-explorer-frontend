@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 
-function AuthForm({ name, title, button, children, questionLink, link, textLink, handleSubmit }) {
+function AuthForm({ error, name, title, button, children, questionLink, link, textLink, onSubmit, isValid }) {
 
     return (
         <main className="auth">
@@ -10,12 +10,14 @@ function AuthForm({ name, title, button, children, questionLink, link, textLink,
                 <img className="authform__logo" src={logo} alt="Логотип проекта Мovie-explorer" />
             </Link>
             <h2 className="authform__heading">{title}</h2>
-            <form className="authform" name={name} onSubmit={handleSubmit}>
+            <form className="authform" name={name} onSubmit={onSubmit}>
                 <div className="authform__container">
                     {children}
                 </div>
+                <span className='authform__error'>{error}</span>
                 <button
-                    className={`authform__button authform__button-load`}
+                    disabled={!isValid}
+                    className={`authform__button authform__button-load ${isValid ? '' : 'authform__button-error'}`}
                     type="submit"
                 >
                     {button}

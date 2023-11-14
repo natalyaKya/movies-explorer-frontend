@@ -1,6 +1,28 @@
-import React from "react";
+import { useEffect } from "react";
 
 function ApiTooltip(props) {
+
+    useEffect(() => {
+
+        function handleEscClose(e) {
+            if (e.key === `Escape`) {
+                props.onClose()
+            }
+        }
+        function handleClickOverlay(e) {
+            if (e.target.classList.contains('popup_opened')) {
+                props.onClose()
+            }
+        }
+
+        if (props.isOpen) {
+            document.addEventListener('keyup', handleEscClose)
+            document.addEventListener('mousedown', handleClickOverlay)
+        } else {
+            document.removeEventListener("keyup", handleEscClose);
+            document.removeEventListener("mousedown", handleClickOverlay)
+        }
+    }, [props.isOpen])
 
     return (
         <div
@@ -14,7 +36,7 @@ function ApiTooltip(props) {
                     type="button"
                 ></button>
                 <span className="popup__heading popup__heading_tolltip">
-                    {props.Error}
+                    {props.message}
                 </span>
             </div>
         </div>

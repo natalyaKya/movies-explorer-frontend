@@ -7,7 +7,6 @@ import HeaderAccount from "../HeaderAccount/HeaderAccount";
 import { useWindowSize } from "@uidotdev/usehooks";
 
 function Header(props) {
-
     const { width } = useWindowSize();
 
     return (
@@ -18,10 +17,8 @@ function Header(props) {
             {props.isAuthorized ?
                 width > 768 ?
                     <>
-                        < Navigation />
-                        <HeaderAccount
-                            isMain={props.isMain}
-                        />
+                        <Navigation />
+                        <HeaderAccount isMain={props.isMain} />
                     </>
                     : <div className="header__burger" onClick={props.handleBurgerClick}></div>
                 :
