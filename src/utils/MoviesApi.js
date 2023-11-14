@@ -17,6 +17,7 @@ class Api {
     }).then((res) => this._checkStatus(res));
   }
 }
+
 export const MoviesApi = new Api({
   baseUrl: "https://api.nomoreparties.co/beatfilm-movies",
   headers: {

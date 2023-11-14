@@ -4,6 +4,7 @@ class Api {
     this.baseUrl = this.options.baseUrl;
     this.headers = this.options.headers;
   }
+
   _checkStatus(res) {
     if (res.ok) {
       return res.json();
