@@ -79,8 +79,7 @@ class Api {
 }
 
 export const MainApi = new Api({
-  // baseUrl: "https://api.projectkya.nomoredomainsrocks.ru",
-  baseUrl: "http://localhost:4000",
+  baseUrl: "https://api.projectkya.nomoredomainsrocks.ru",
   headers: {
     "Content-Type": "application/json",
   },
