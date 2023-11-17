@@ -20,7 +20,12 @@ function SearchForm(props) {
         event.preventDefault()
     };
 
-    function handleSubmit() {
+    function handleSubmit(event) {
+        event.preventDefault();
+        searchSubmit();
+    }
+
+    function searchSubmit() {
         props.onSearch(props.query)
         props.setMore(0);
         if (location.pathname === '/movies') {
@@ -51,7 +56,7 @@ function SearchForm(props) {
             <FilterCheckbox
                 isToggle={props.isToggle}
                 onToggle={props.onToggle}
-                searchCheckbox={handleSubmit}
+                searchCheckbox={searchSubmit}
             />
         </>
     );
