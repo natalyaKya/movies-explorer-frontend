@@ -21,7 +21,7 @@ function MoviesCardList(props) {
     useEffect(() => {
         props.setMore(0);
     }, [width])
-
+    console.log(props.movies.slice(0, count + (plus)))
     return (
         props.isLoading ?
             <PreLoader />

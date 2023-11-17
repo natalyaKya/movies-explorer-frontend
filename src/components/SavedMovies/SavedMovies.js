@@ -49,6 +49,7 @@ function SavedMovies(props) {
                     onCkeck={props.onCkeck}
                     setSavedMovie={props.setSavedMovie}
                     setMore={setMore}
+                    more={more}
                 />
             </main>
             <Footer />
