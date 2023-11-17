@@ -19,8 +19,10 @@ export const useWidth = (delay = 100) => {
 }
 
 export const maxMoviesByWidth = width => {
-    if (width < 768) {
+    if (width < 480) {
         return ((col, row) => [col * row, col * 2])(1, 5)
+    } else if (width < 768) {
+        return ((col, row) => [col * row, col * 2])(1, 8)
     } else if (width < 930) {
         return ((col, row) => [col * row, col])(2, 4)
     } else if (width < 1200) {

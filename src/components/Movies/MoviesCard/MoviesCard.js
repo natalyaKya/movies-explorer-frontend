@@ -56,7 +56,7 @@ function MoviesCard(props) {
                         onClick={handleSumbitLike}
                     />
                     : <button
-                        className='card__button-movies card__button-movies_active'
+                        className='card__button-movies-delete'
                         type="button"
                         onClick={handleDeleteMovie}
                     />

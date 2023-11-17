@@ -53,6 +53,19 @@
     background-color: inherit;
 }
 
+.card__button-movies-delete {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+    background-image: url(../../../images/close-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .card__button-movies_active {
     background-color: #2BE080;
 }

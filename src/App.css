@@ -45,10 +45,6 @@
   opacity: 1;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
-
 @media (max-width: 768px) {
   .nav__link_active {
     font-size: 18px;

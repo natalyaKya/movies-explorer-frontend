@@ -75,7 +75,7 @@
 @media (max-width: 768px) {
     .checkbox {
         justify-content: flex-end;
-        padding: 0 30px 55px;
+        padding: 0 30px 55px 80px;
     }
 
     .checkbox__inner {

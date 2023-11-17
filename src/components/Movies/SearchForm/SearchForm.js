@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 
 function SearchForm(props) {
     const location = useLocation()
-    // const searchFilm = location.pathname === '/movies' ? localStorage.getItem('search') : props.query
 
     useEffect(() => {
         if (location.pathname === '/movies') {
@@ -16,15 +15,15 @@ function SearchForm(props) {
     }, [location.pathname])
 
     const handleSearchFilmChange = (event) => {
-        if (location.pathname === '/movies') {
-            localStorage.setItem('search', event.target.value)
-        }
         props.setQuery(event.target.value)
     };
 
     function handleSubmit(event) {
         event.preventDefault()
         props.onSearch(props.query)
+        if (location.pathname === '/movies') {
+            localStorage.setItem('search', props.query)
+        }
     }
 
     return (
