@@ -21,6 +21,7 @@ function SearchForm(props) {
     function handleSubmit(event) {
         event.preventDefault()
         props.onSearch(props.query)
+        props.setMore(0);
         if (location.pathname === '/movies') {
             localStorage.setItem('search', props.query)
         }

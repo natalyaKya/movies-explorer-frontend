@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { maxMoviesByWidth, useWidth } from '../../../hooks/useWidth.js';
 import MoviesCard from "../MoviesCard/MoviesCard.js";
 import PreLoader from "../../PreLoader/PreLoader.js"
@@ -6,18 +6,21 @@ import { useLocation } from "react-router-dom";
 
 function MoviesCardList(props) {
     const width = useWidth();
-    const [more, setMore] = useState(0);
     const [count, plus] = maxMoviesByWidth(width);
     const storeMovie = JSON.parse(localStorage.getItem('movies')) ?? []
     const location = useLocation()
     const showedMovies = useMemo(() => {
         if (props.movies.length > 0) {
-            return props.movies.slice(0, count + (plus * more));
+            return props.movies.slice(0, count + (plus * props.more));
         } else if (location.pathname === '/movies' && props.movies.length > 0) {
             return storeMovie
         }
         return props.movies
-    }, [storeMovie, props.movies, plus, count, more]);
+    }, [storeMovie, props.movies, plus, count, props.more]);
+
+    useEffect(() => {
+        props.setMore(0);
+    }, [width])
 
     return (
         props.isLoading ?
@@ -43,7 +46,7 @@ function MoviesCardList(props) {
                         <button
                             className="movies__button"
                             type="button"
-                            onClick={() => { setMore(more + 1) }}
+                            onClick={() => { props.setMore(props.more + 1) }}
                         >
                             Ещё
                         </button>}

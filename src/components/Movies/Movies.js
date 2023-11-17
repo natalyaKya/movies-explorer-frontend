@@ -8,7 +8,8 @@ import { useLocation } from "react-router-dom";
 
 function Movies(props) {
     const [isShortMovie, setIsShortMovie] = useState(JSON.parse(localStorage.getItem('toggle')) ?? false);
-    const filteredMovies = useFilter(props.movies, isShortMovie)
+    const filteredMovies = useFilter(props.movies, isShortMovie);
+    const [more, setMore] = useState(0);
     const location = useLocation()
 
     useEffect(() => {
@@ -40,6 +41,7 @@ function Movies(props) {
                     onToggle={handleToggle}
                     isToggle={isShortMovie}
                     error={props.error}
+                    setMore={setMore}
                 />
                 <MoviesCardList
                     like={props.like}
@@ -50,6 +52,8 @@ function Movies(props) {
                     onDisLike={props.onDisLike}
                     onCkeck={props.onCkeck}
                     firstVisit={props.firstVisit}
+                    setMore={setMore}
+                    more={more}
                 />
             </main>
             <Footer />
