@@ -17,10 +17,10 @@ function SearchForm(props) {
 
     const handleSearchFilmChange = (event) => {
         props.setQuery(event.target.value)
+        event.preventDefault()
     };
 
     function handleSubmit() {
-        props.query.preventDefault()
         props.onSearch(props.query)
         props.setMore(0);
         if (location.pathname === '/movies') {
@@ -51,7 +51,7 @@ function SearchForm(props) {
             <FilterCheckbox
                 isToggle={props.isToggle}
                 onToggle={props.onToggle}
-                query={props.query}
+                searchCheckbox={handleSubmit}
             />
         </>
     );
