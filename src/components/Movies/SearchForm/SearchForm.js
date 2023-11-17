@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 function SearchForm(props) {
     const location = useLocation()
 
+
     useEffect(() => {
         if (location.pathname === '/movies') {
             props.setQuery(localStorage.getItem('search'))
@@ -18,8 +19,8 @@ function SearchForm(props) {
         props.setQuery(event.target.value)
     };
 
-    function handleSubmit(event) {
-        event.preventDefault()
+    function handleSubmit() {
+        props.query.preventDefault()
         props.onSearch(props.query)
         props.setMore(0);
         if (location.pathname === '/movies') {
@@ -50,7 +51,7 @@ function SearchForm(props) {
             <FilterCheckbox
                 isToggle={props.isToggle}
                 onToggle={props.onToggle}
-                filterCheckboxChange={props.filterCheckboxChange}
+                query={props.query}
             />
         </>
     );
