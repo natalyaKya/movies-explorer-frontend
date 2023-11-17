@@ -39,6 +39,7 @@ function SavedMovies(props) {
                     isToggle={isShortMovie}
                     error={props.error}
                     setMore={setMore}
+                    more={more}
                 />
                 <MoviesCardList
                     like={props.like}
