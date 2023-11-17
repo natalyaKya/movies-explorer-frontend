@@ -38,6 +38,7 @@ function SavedMovies(props) {
                     onToggle={handleToggle}
                     isToggle={isShortMovie}
                     error={props.error}
+                    setMore={setMore}
                 />
                 <MoviesCardList
                     like={props.like}
