@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 function SavedMovies(props) {
     const [savedMovies, setSavedMovies] = useState([])
+    const [more, setMore] = useState(0);
     const [isShortMovie, setIsShortMovie] = useState(false);
     const filteredMovies = useFilter(savedMovies, isShortMovie)
 
@@ -45,7 +46,7 @@ function SavedMovies(props) {
                     onDisLike={props.onDisLike}
                     onCkeck={props.onCkeck}
                     setSavedMovie={props.setSavedMovie}
-
+                    setMore={setMore}
                 />
             </main>
             <Footer />
